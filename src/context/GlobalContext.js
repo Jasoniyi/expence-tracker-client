@@ -18,7 +18,9 @@ export const GlobalProvider = ({ children }) => {
   //create Actions
   async function getTransactions() {
     try {
-      const res = await axios.get("/api/v1/transactions");
+      const res = await axios.get(
+        "https://expences-tracker.herokuapp.com/api/v1/transactions"
+      );
 
       dispatch({
         type: "GET_TRANSACTIONS",
@@ -39,7 +41,11 @@ export const GlobalProvider = ({ children }) => {
       },
     };
     try {
-      const res = await axios.post(`api/v1/transactions`, transaction, config);
+      const res = await axios.post(
+        `https://expences-tracker.herokuapp.com/api/v1/transactions`,
+        transaction,
+        config
+      );
       dispatch({
         type: "ADD_TRANSACTION",
         payload: res.data.data,
@@ -54,7 +60,9 @@ export const GlobalProvider = ({ children }) => {
 
   const deleteTransaction = async (id) => {
     try {
-      await axios.delete(`/api/v1/transactions/${id}`);
+      await axios.delete(
+        `https://expences-tracker.herokuapp.com/api/v1/transactions/${id}`
+      );
 
       dispatch({
         type: "DELETE_TRANSACTION",
