@@ -1,0 +1,14 @@
+@import "./variables";
+@import "./navigation";
+@import "./menu-body";
+@import "./reponsiveness";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $body-bck;
+}
+
+.container-wrapper {
+  display: flex;
+}

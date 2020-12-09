@@ -1,0 +1,41 @@
+// @import "./variables";
+.navigation {
+  flex: 1;
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: $nav-bck;
+  height: 100%;
+  color: #ffffff;
+
+  ul {
+    list-style: none;
+    margin-top: 2em;
+    cursor: pointer;
+
+    .nav-icon {
+      fill: #ffffff;
+      width: 30px;
+      height: 30px;
+    }
+
+    li {
+      padding: 20px 50px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #ffffff;
+      padding: 0 20px 0 20px;
+      font-size: 20px;
+
+      &:hover {
+        color: aqua;
+        font-size: 21px;
+        transition: 1s ease-in-out;
+      }
+    }
+  }
+}

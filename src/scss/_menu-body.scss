@@ -1,0 +1,341 @@
+.menu-display {
+  flex: 4;
+}
+
+.fixed-menu {
+  display: none;
+}
+
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+
+    .dashboard-header-left {
+      input[type="text"] {
+        width: 350px;
+        height: 30px;
+        border-radius: 10px;
+        outline: 0;
+        border: 1px solid #ffffff;
+        margin-left: 10px;
+        padding-left: 10px;
+      }
+    }
+
+    .dashboard-header-right {
+      display: flex;
+      margin-right: 20px;
+
+      button {
+        width: 200px;
+        height: 30px;
+        border: 1px solid $button;
+        border-radius: 10px;
+        line-height: 10px;
+        margin-right: 10px;
+
+        &:hover {
+          border: 1px solid $icon-hover;
+        }
+      }
+
+      .icons {
+        display: flex;
+        font-size: 20px;
+        margin: 5px 10px;
+
+        .icon-left:hover {
+          color: $icon-hover;
+        }
+
+        .icon-right {
+          margin-left: 20px;
+
+          &:hover {
+            color: $icon-hover;
+          }
+        }
+      }
+    }
+  }
+
+  .dashboard-transactions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+    .balance {
+      @extend %transaction-box;
+      background-color: $blue;
+      display: flex;
+      flex-direction: column;
+      color: #ffffff;
+    }
+
+    .trans-text {
+      padding: 10px 20px;
+      text-transform: capitalize;
+      font-weight: 600;
+    }
+
+    .trans-amount {
+      display: flex;
+      flex-direction: row;
+      padding: 10px 20px;
+
+      .amount {
+        padding-left: 10px;
+        font-size: 32px;
+        font-weight: 600;
+      }
+
+      .trans-icon {
+        color: #ffffff;
+        padding-top: 7px;
+        font-size: 24px;
+      }
+
+      .amounts {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .trans-percent {
+        position: relative;
+        left: 6em;
+      }
+    }
+
+    .expense {
+      @extend %transaction-box;
+      background-color: #ffffff;
+
+      .trans-icon {
+        color: black;
+      }
+    }
+
+    .income {
+      @extend %transaction-box;
+      background-color: #612cd2;
+      color: #ffffff;
+    }
+  }
+
+  .recent-trans {
+    display: flex;
+    padding: 40px 20px;
+
+    .trans-left {
+      display: flex;
+      flex: 2;
+    }
+
+    .trans-right {
+      display: flex;
+      flex: 1;
+      padding-left: 80px;
+    }
+  }
+}
+
+// DashboardTransactions Component
+.dashboard-transaction-wrapper {
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .recent-text {
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .recent-list {
+    .list {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 15px;
+      margin-right: 20px;
+      border-bottom: 1px solid rgba(141, 139, 139, 0.2);
+
+      .list-text {
+        span {
+          padding-right: 10px;
+          color: orange;
+        }
+      }
+
+      .list-price {
+        display: flex;
+        align-content: flex-start;
+
+        .price-expense {
+          width: 8px;
+          height: 8px;
+          margin-top: 6px;
+          margin-right: 5px;
+          border-radius: 10px;
+          background-color: red;
+        }
+
+        .price-income {
+          width: 8px;
+          height: 8px;
+          margin-top: 6px;
+          margin-right: 5px;
+          border-radius: 10px;
+          background-color: blue;
+        }
+      }
+
+      .list-action {
+        padding-right: 20px;
+
+        button {
+          width: 60px;
+          height: 25px;
+          border-radius: 10px;
+          background-color: orangered;
+          color: #ffffff;
+          border: 0;
+        }
+      }
+    }
+  }
+}
+
+// DashboardSection Component
+.dashboard-section {
+  background-color: #ffffff;
+  width: 100%;
+  height: 17em;
+
+  h2 {
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .dashboard-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .dashboard-section-image {
+      img {
+        width: 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+// DashboardMostExpense Component
+
+.dashboard-most-expense {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .most-expense-row {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    .most-expense-box {
+      background: #ffffff;
+      margin: 10px 5px;
+      width: 23%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 7px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+
+      .most-expense-list-icon {
+        background: url(../images/piggy-bank.svg) no-repeat;
+        width: 40%;
+        height: 100px;
+        background-size: contain;
+        margin-top: 17px;
+        margin-bottom: 10px;
+      }
+
+      .refer {
+        background: url(../images/referral.svg) no-repeat;
+        width: 40%;
+        height: 100px;
+        background-size: contain;
+        margin-top: 17px;
+        margin-right: 15px;
+      }
+
+      .about-yourself {
+        background: url(../images/user.svg) no-repeat;
+        width: 40%;
+        height: 100px;
+        background-size: contain;
+        margin-top: 17px;
+        margin-right: 15px;
+      }
+
+      .authentification {
+        background: url(../images/phone.svg) no-repeat;
+        width: 40%;
+        height: 100px;
+        background-size: contain;
+        margin-top: 17px;
+        margin-right: 15px;
+      }
+
+      .most-expense-list-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: rgb(41, 40, 40);
+        margin: 5px 10px;
+        padding-left: 10px;
+      }
+
+      .most-expense-list-price {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// FOOTER COMPONENT
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: brown;
+  display: none;
+}
+
+// COMING SOON
+.coming-soon {
+  width: 100%;
+  height: 100vh;
+  background: url(../images/coming-soon.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
